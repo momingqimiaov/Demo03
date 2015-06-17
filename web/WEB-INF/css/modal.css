@@ -1,0 +1,32 @@
+#img1 {
+	background-image: url("../img/u.png");
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	vertical-align: middle;
+	height: 30px;
+	margin-right: 5px;
+}
+
+#img2 {
+	background-image: url("../img/p.png");
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	vertical-align: middle;
+	height: 30px;
+	margin-right: 5px;
+}
+
+form div input {
+	width: 150px;
+	height: 20px;
+	border-radius: 15px;
+	border-style: none;
+	padding-left: 8px;
+	vertical-align: middle;
+}
+
+form {
+	padding-left: 35px;
+}

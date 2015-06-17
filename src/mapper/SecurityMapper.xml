@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.SecurityMapper">
+    <resultMap id="BaseResultMap" type="model.Security">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="securityName" property="securityname" jdbcType="CHAR"/>
+        <result column="aboutSecurity" property="aboutsecurity" jdbcType="CHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, securityName, aboutSecurity
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from securities
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from securities
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="model.Security">
+    insert into securities (id, securityName, aboutSecurity
+      )
+    values (#{id,jdbcType=INTEGER}, #{securityname,jdbcType=CHAR}, #{aboutsecurity,jdbcType=CHAR}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="model.Security">
+        insert into securities
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="securityname != null">
+                securityName,
+            </if>
+            <if test="aboutsecurity != null">
+                aboutSecurity,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="securityname != null">
+                #{securityname,jdbcType=CHAR},
+            </if>
+            <if test="aboutsecurity != null">
+                #{aboutsecurity,jdbcType=CHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="model.Security">
+        update securities
+        <set>
+            <if test="securityname != null">
+                securityName = #{securityname,jdbcType=CHAR},
+            </if>
+            <if test="aboutsecurity != null">
+                aboutSecurity = #{aboutsecurity,jdbcType=CHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="model.Security">
+    update securities
+    set securityName = #{securityname,jdbcType=CHAR},
+      aboutSecurity = #{aboutsecurity,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+    <select id="getAllSecurityList" resultType="Security">
+        select * from securities
+    </select>
+
+    <select id="getSecurityByName" parameterType="String" resultType="Security">
+        select * from securities where securityName=#{securityName}
+    </select>
+
+    <select id="getAllSecurityNameList" resultType="String">
+        select securityName from securities
+    </select>
+
+    <select id="getIdBySecurityName" resultType="Integer">
+        select id from securities where securityName=#{securityName}
+    </select>
+
+</mapper>

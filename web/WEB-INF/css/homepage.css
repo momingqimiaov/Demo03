@@ -1,0 +1,39 @@
+img {
+	width: 50px;
+	height: 50px;
+}
+
+.header {
+	margin-top: 5px;
+}
+
+.header button {
+	border-radius: 15px;
+	border-style: none;
+}
+
+.context {
+	margin-top: 20px;
+	height: 450px;
+	height: 450px;
+}
+
+.context-lef {
+	background-color: #aaa8a8;
+	border-radius: 6px;
+	width: 20%;
+	height: 450px;
+	float: left;
+}
+
+.context-rig {
+	background-color: #aaa8a8;
+	border-radius: 6px;
+	width: 78%;
+	height: 450px;
+	float: right;
+}
+
+li, td, button, h4 {
+	text-align: center;
+}

@@ -1,0 +1,59 @@
+.middle
+{
+    width: 250px;
+    height: 180px;
+    background: gray;
+    border-radius: 8px;
+}
+
+form
+{
+    margin: auto;
+    line-height: 20px;
+    padding: 30px;
+}
+
+form div input
+{
+    width: 150px;
+    height: 20px;
+    border-radius: 15px;
+    border-style: none;
+    padding-left: 8px;
+    vertical-align: middle;
+}
+
+.submit
+{
+    float: right;
+    width: 70px;
+    height: 30px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: #57545f;
+    text-align: center;
+}
+
+.submit:HOVER
+{
+    background-color: olive;
+    color: orange;
+}
+
+.submit:ACTIVE
+{
+    background-color: #94846b;
+    color: black;
+}
+
+.copy-rights a
+{
+    text-decoration: none;
+    margin-right: 5px;
+    color: #c0c0c0;
+}
+
+.copy-rights a:HOVER
+{
+    color: white;
+}

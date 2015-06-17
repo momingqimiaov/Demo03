@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.User_SecurityMapper">
+    <resultMap id="BaseResultMap" type="model.User_Security">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="userId" property="userid" jdbcType="INTEGER"/>
+        <result column="userSecurity" property="usersecurity" jdbcType="CHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, userId, userSecurity
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from user_security
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_security
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="model.User_Security">
+    insert into user_security (id, userId, userSecurity
+      )
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{usersecurity,jdbcType=CHAR}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="model.User_Security">
+        insert into user_security
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userid != null">
+                userId,
+            </if>
+            <if test="usersecurity != null">
+                userSecurity,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="userid != null">
+                #{userid,jdbcType=INTEGER},
+            </if>
+            <if test="usersecurity != null">
+                #{usersecurity,jdbcType=CHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="model.User_Security">
+        update user_security
+        <set>
+            <if test="userid != null">
+                userId = #{userid,jdbcType=INTEGER},
+            </if>
+            <if test="usersecurity != null">
+                userSecurity = #{usersecurity,jdbcType=CHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="model.User_Security">
+    update user_security
+    set userId = #{userid,jdbcType=INTEGER},
+      userSecurity = #{usersecurity,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
