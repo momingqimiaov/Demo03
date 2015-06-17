@@ -35,6 +35,7 @@
         <a href="#">立即注册</a>| <a href="#">忘记密码？</a>| <a href="#">用户隐私</a>| <a href="#">用户协议</a>|
         <span style="color: #080808"><b>©2015 CHENSHANG . All rights reserved 京ICP备XXXXXX号 京公网安备1234567890</b></span>
     </div>
+    <br/>
 </div>
 </body>
 </html>
