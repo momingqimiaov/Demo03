@@ -23,6 +23,8 @@
                     <th>用户ID</th>
                     <th>用户姓名</th>
                     <th>用户密码</th>
+                    <th>用户角色</th>
+                    <th>用户角色</th>
                     <th>关于用户</th>
                     <th>操作</th>
                 </tr>
@@ -44,6 +46,8 @@
                     <td>${user.id }</td>
                     <td>${user.username }</td>
                     <td>${user.password }</td>
+                    <td>${user.role }</td>
+                    <td>${user.security }</td>
                     <td>${user.aboutuser}</td>
                     <td style="width: 250px;"><a href="${pageContext.request.contextPath}/deleteuser/${user.id}">
                         <button type="button" class="btn btn-danger btn-sm" style="width: 55px;">删除</button>

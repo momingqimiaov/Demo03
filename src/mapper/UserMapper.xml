@@ -4,12 +4,14 @@
     <resultMap id="BaseResultMap" type="model.User">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="userName" property="username" jdbcType="CHAR"/>
-        <result column="password" property="password" jdbcType="CHAR"/>
         <result column="aboutUser" property="aboutuser" jdbcType="CHAR"/>
+        <result column="password" property="password" jdbcType="CHAR"/>
+        <result column="role" property="role" jdbcType="CHAR"/>
+        <result column="security" property="security" jdbcType="CHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-    id, userName, password, aboutUser
-  </sql>
+        id, userName, aboutUser, password, role, security
+    </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>
@@ -17,12 +19,15 @@
         where id = #{id,jdbcType=INTEGER}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from users where id = #{id,jdbcType=INTEGER}
-  </delete>
+        delete from users
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
     <insert id="insert" parameterType="model.User">
-    insert into users (id, userName, password, aboutUser)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=CHAR}, #{password,jdbcType=CHAR}, #{aboutuser,jdbcType=CHAR})
-  </insert>
+        insert into users (id, userName, aboutUser,
+        password, role, security)
+        values (#{id,jdbcType=INTEGER}, #{username,jdbcType=CHAR}, #{aboutuser,jdbcType=CHAR},
+        #{password,jdbcType=CHAR}, #{role,jdbcType=CHAR}, #{security,jdbcType=CHAR})
+    </insert>
     <insert id="insertSelective" parameterType="model.User">
         insert into users
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -32,11 +37,17 @@
             <if test="username != null">
                 userName,
             </if>
+            <if test="aboutuser != null">
+                aboutUser,
+            </if>
             <if test="password != null">
                 password,
             </if>
-            <if test="aboutuser != null">
-                aboutUser,
+            <if test="role != null">
+                role,
+            </if>
+            <if test="security != null">
+                security,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -46,11 +57,17 @@
             <if test="username != null">
                 #{username,jdbcType=CHAR},
             </if>
+            <if test="aboutuser != null">
+                #{aboutuser,jdbcType=CHAR},
+            </if>
             <if test="password != null">
                 #{password,jdbcType=CHAR},
             </if>
-            <if test="aboutuser != null">
-                #{aboutuser,jdbcType=CHAR},
+            <if test="role != null">
+                #{role,jdbcType=CHAR},
+            </if>
+            <if test="security != null">
+                #{security,jdbcType=CHAR},
             </if>
         </trim>
     </insert>
@@ -60,11 +77,17 @@
             <if test="username != null">
                 userName = #{username,jdbcType=CHAR},
             </if>
+            <if test="aboutuser != null">
+                aboutUser = #{aboutuser,jdbcType=CHAR},
+            </if>
             <if test="password != null">
                 password = #{password,jdbcType=CHAR},
             </if>
-            <if test="aboutuser != null">
-                aboutUser = #{aboutuser,jdbcType=CHAR},
+            <if test="role != null">
+                role = #{role,jdbcType=CHAR},
+            </if>
+            <if test="security != null">
+                security = #{security,jdbcType=CHAR},
             </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
@@ -72,8 +95,10 @@
     <update id="updateByPrimaryKey" parameterType="model.User">
     update users
     set userName = #{username,jdbcType=CHAR},
+      aboutUser = #{aboutuser,jdbcType=CHAR},
       password = #{password,jdbcType=CHAR},
-      aboutUser = #{aboutuser,jdbcType=CHAR}
+      role = #{role,jdbcType=CHAR},
+      security = #{security,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 
@@ -85,6 +110,5 @@
     <select id="getUserByName" parameterType="String" resultType="User">
         select * from users where userName=#{userName}
     </select>
-
 
 </mapper>

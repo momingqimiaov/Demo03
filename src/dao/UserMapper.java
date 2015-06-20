@@ -24,4 +24,6 @@ public interface UserMapper
     List<User> getAllUserList();
 
     User getUserByName(String userName);
+
+    List<String> getUserRolesByUserId(int userId);
 }

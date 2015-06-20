@@ -2,8 +2,11 @@ package dao;
 
 
 import model.User_Role;
+import org.springframework.stereotype.Component;
 
-public interface User_RoleMapper {
+@Component
+public interface User_RoleMapper
+{
     int deleteByPrimaryKey(Integer id);
 
     int insert(User_Role record);
@@ -15,4 +18,6 @@ public interface User_RoleMapper {
     int updateByPrimaryKeySelective(User_Role record);
 
     int updateByPrimaryKey(User_Role record);
+
+    void deleteUserRoleByUserId(Integer userId);
 }

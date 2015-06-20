@@ -68,4 +68,10 @@
       userRloe = #{userrloe,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <delete id="deleteUserRoleByUserId" parameterType="java.lang.Integer">
+        DELETE FROM user_role WHERE userId=#{userId}
+    </delete>
+
+
 </mapper>

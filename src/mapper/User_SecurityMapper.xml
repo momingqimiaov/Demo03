@@ -68,4 +68,8 @@
       userSecurity = #{usersecurity,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <delete id="deletUserSecurityByUserId" parameterType="java.lang.Integer">
+      DELETE FROM user_security WHERE userId=#{userId}
+    </delete>
 </mapper>

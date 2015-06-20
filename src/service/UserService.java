@@ -22,4 +22,15 @@ public class UserService
     {
         return userMapper.getAllUserList();
     }
+
+    public List<String> getUserRolesByUserId(int userId)
+    {
+        return userMapper.getUserRolesByUserId(userId);
+    }
+
+
+    public void deleteUserByUserId(Integer userid)
+    {
+        userMapper.deleteByPrimaryKey(userid);
+    }
 }
