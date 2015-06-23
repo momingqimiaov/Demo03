@@ -7,6 +7,8 @@ public class User_Security {
 
     private String usersecurity;
 
+    private Integer securityid;
+
     public Integer getId() {
         return id;
     }
@@ -31,13 +33,11 @@ public class User_Security {
         this.usersecurity = usersecurity == null ? null : usersecurity.trim();
     }
 
-    @Override
-    public String toString()
-    {
-        return "User_Security{" +
-                "id=" + id +
-                ", userid=" + userid +
-                ", usersecurity='" + usersecurity + '\'' +
-                '}';
+    public Integer getSecurityid() {
+        return securityid;
+    }
+
+    public void setSecurityid(Integer securityid) {
+        this.securityid = securityid;
     }
 }

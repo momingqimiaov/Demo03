@@ -4,6 +4,8 @@ package dao;
 import model.User_Security;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public interface User_SecurityMapper
 {
@@ -20,4 +22,10 @@ public interface User_SecurityMapper
     int updateByPrimaryKey(User_Security record);
 
     void deletUserSecurityByUserId(Integer userId);
+
+    List<String> getSecurityNameByUserId(Integer id);
+
+    List<String> getUserSecurityBySecurityID(Integer securityId);
+
+    void deletUserSecurityBySecurityID(Integer securityId);
 }

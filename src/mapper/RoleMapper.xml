@@ -84,4 +84,7 @@
     <select id="getIdByRoleName" resultType="Integer">
         select id from roles where rolename=#{rolename}
     </select>
+
+
+
 </mapper>

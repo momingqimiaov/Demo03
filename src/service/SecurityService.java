@@ -22,4 +22,21 @@ public class SecurityService
     {
         return securityMapper.getAllSecurityList();
     }
+
+
+    public List<String> getAllSecurityNameList()
+    {
+        return securityMapper.getAllSecurityNameList();
+    }
+
+    public void addSecurity(Security security)
+    {
+        securityMapper.insertSelective(security);
+    }
+
+    public void deleteSecurityById(Integer id)
+    {
+        securityMapper.deleteByPrimaryKey(id);
+    }
+
 }

@@ -1,9 +1,7 @@
 package service;
 
 import dao.RoleMapper;
-import dao.UserMapper;
 import model.Role;
-import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +21,25 @@ public class RoleService
     public List<Role> getAllRoleList()
     {
         return roleMapper.getAllRoleList();
+    }
+
+    public List<String> getAllRoleNameList()
+    {
+        return roleMapper.getAllRoleNameList();
+    }
+
+    public void addRole(Role role)
+    {
+        roleMapper.insertSelective(role);
+    }
+
+    public void deleteRoleById(Integer id)
+    {
+        roleMapper.deleteByPrimaryKey(id);
+    }
+
+    public void upDateRoleById(Role role)
+    {
+        roleMapper.updateByPrimaryKeySelective(role);
     }
 }

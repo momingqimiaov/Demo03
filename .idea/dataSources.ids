@@ -23,21 +23,23 @@
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="userId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="userRloe" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
+      <column name="roleId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="user_security" schema="" catalog="demo" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="userId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="userSecurity" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
+      <column name="securityId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="users" schema="" catalog="demo" type="TABLE">
-      <column name="userName" sqlType="CHAR" precision="255" scale="0" nullable="true" jdbcType="1"/>
-      <column name="aboutUser" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
-      <column name="password" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="role" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
-      <column name="security" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
+      <column name="userName" sqlType="CHAR" precision="255" scale="0" nullable="true" jdbcType="1"/>
+      <column name="aboutUser" sqlType="CHAR" precision="255" scale="0" nullable="true" jdbcType="1"/>
+      <column name="password" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
+      <column name="role" sqlType="CHAR" precision="255" scale="0" nullable="true" jdbcType="1" def="Jyc="/>
+      <column name="security" sqlType="CHAR" precision="255" scale="0" nullable="true" jdbcType="1" def="Jyc="/>
       <primary-key name="PRIMARY" columns="id"/>
       <index name="unique_name" unique="true" columns="userName"/>
     </table>

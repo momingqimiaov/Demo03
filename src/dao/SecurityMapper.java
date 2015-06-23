@@ -22,4 +22,7 @@ public interface SecurityMapper
     int updateByPrimaryKey(Security record);
 
     List<Security> getAllSecurityList();
+
+    List<String> getAllSecurityNameList();
+
 }

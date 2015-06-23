@@ -10,6 +10,7 @@
         <typeAlias type="model.Security" alias="Security"/>
         <typeAlias type="model.User_Role" alias="UserRole"/>
         <typeAlias type="model.User_Security" alias="UserSecurity"/>
+        <typeAlias type="model.UserRoleRole" alias="UserRoleRole"/>
     </typeAliases>
 
     <mappers>

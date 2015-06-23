@@ -100,7 +100,7 @@
       role = #{role,jdbcType=CHAR},
       security = #{security,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
-  </update>
+    </update>
 
     <select id="getAllUserList" resultType="User">
         select * from users
@@ -110,5 +110,6 @@
     <select id="getUserByName" parameterType="String" resultType="User">
         select * from users where userName=#{userName}
     </select>
+
 
 </mapper>

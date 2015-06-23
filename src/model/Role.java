@@ -1,33 +1,41 @@
 package model;
 
-public class Role {
+public class Role
+{
     private Integer id;
 
     private String rolename;
 
     private String aboutrole;
 
-    public Integer getId() {
+
+    public Integer getId()
+    {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Integer id)
+    {
         this.id = id;
     }
 
-    public String getRolename() {
+    public String getRolename()
+    {
         return rolename;
     }
 
-    public void setRolename(String rolename) {
+    public void setRolename(String rolename)
+    {
         this.rolename = rolename == null ? null : rolename.trim();
     }
 
-    public String getAboutrole() {
+    public String getAboutrole()
+    {
         return aboutrole;
     }
 
-    public void setAboutrole(String aboutrole) {
+    public void setAboutrole(String aboutrole)
+    {
         this.aboutrole = aboutrole == null ? null : aboutrole.trim();
     }
 
@@ -39,5 +47,15 @@ public class Role {
                 ", id=" + id +
                 ", rolename='" + rolename + '\'' +
                 '}';
+    }
+
+    public Role()
+    {
+    }
+
+    public Role(String rolename, String aboutrole)
+    {
+        this.rolename = rolename;
+        this.aboutrole = aboutrole;
     }
 }

@@ -1,33 +1,40 @@
 package model;
 
-public class Security {
+public class Security
+{
     private Integer id;
 
     private String securityname;
 
     private String aboutsecurity;
 
-    public Integer getId() {
+    public Integer getId()
+    {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Integer id)
+    {
         this.id = id;
     }
 
-    public String getSecurityname() {
+    public String getSecurityname()
+    {
         return securityname;
     }
 
-    public void setSecurityname(String securityname) {
+    public void setSecurityname(String securityname)
+    {
         this.securityname = securityname == null ? null : securityname.trim();
     }
 
-    public String getAboutsecurity() {
+    public String getAboutsecurity()
+    {
         return aboutsecurity;
     }
 
-    public void setAboutsecurity(String aboutsecurity) {
+    public void setAboutsecurity(String aboutsecurity)
+    {
         this.aboutsecurity = aboutsecurity == null ? null : aboutsecurity.trim();
     }
 
@@ -39,5 +46,23 @@ public class Security {
                 ", id=" + id +
                 ", securityname='" + securityname + '\'' +
                 '}';
+    }
+
+
+    public Security()
+    {
+    }
+
+    public Security(Integer id, String securityname, String aboutsecurity)
+    {
+        this.id = id;
+        this.securityname = securityname;
+        this.aboutsecurity = aboutsecurity;
+    }
+
+    public Security(String securityname, String aboutsecurity)
+    {
+        this.securityname = securityname;
+        this.aboutsecurity = aboutsecurity;
     }
 }

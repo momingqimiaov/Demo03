@@ -1,8 +1,11 @@
 package dao;
 
 
+import model.UserRoleRole;
 import model.User_Role;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public interface User_RoleMapper
@@ -20,4 +23,12 @@ public interface User_RoleMapper
     int updateByPrimaryKey(User_Role record);
 
     void deleteUserRoleByUserId(Integer userId);
+
+    List<String> getRoleNameByUserId(Integer id);
+
+    List<String> getUserRoleByRoleName(String userRloe);
+
+    void deleteUserByRoleName(String userRloe);
+
+    void upDateRoleNameByRoleId(UserRoleRole userRoleRole);
 }

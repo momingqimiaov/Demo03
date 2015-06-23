@@ -33,4 +33,15 @@ public class UserService
     {
         userMapper.deleteByPrimaryKey(userid);
     }
+
+    public void addUser(User user)
+    {
+
+        userMapper.insertSelective(user);
+    }
+
+    public void upDateUserById(User user)
+    {
+        userMapper.updateByPrimaryKey(user);
+    }
 }

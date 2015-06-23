@@ -14,6 +14,26 @@ public class User
 
     private String aboutuser;
 
+    public User()
+    {
+    }
+
+    public User(Integer id, String username, String password, String role, String security, String aboutuser)
+    {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.security = security;
+        this.aboutuser = aboutuser;
+    }
+
+    public User(String userName, String password)
+    {
+        this.username = userName;
+        this.password = password;
+    }
+
     public Integer getId()
     {
         return id;
@@ -86,4 +106,6 @@ public class User
                 ", security='" + security + '\'' +
                 '}';
     }
+
+
 }

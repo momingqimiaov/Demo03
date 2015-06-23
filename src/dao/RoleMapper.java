@@ -22,4 +22,6 @@ public interface RoleMapper
     int updateByPrimaryKey(Role record);
 
     List<Role> getAllRoleList();
+
+    List<String> getAllRoleNameList();
 }
