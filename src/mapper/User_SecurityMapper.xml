@@ -81,7 +81,7 @@
     </update>
 
     <delete id="deletUserSecurityByUserId" parameterType="java.lang.Integer">
-      DELETE FROM user_security WHERE userId=#{userId}
+        DELETE FROM user_security WHERE userId=#{userId}
     </delete>
 
     <select id="getSecurityNameByUserId" parameterType="java.lang.Integer" resultType="java.lang.String">
@@ -96,4 +96,10 @@
         DELETE FROM user_security WHERE securityId=#{securityId}
     </delete>
 
+    <update id="upDateSecurityNameBySecurityId" parameterType="UserSecurity">
+    UPDATE user_security SET userSecurity=userSecurity=#{usersecurity} where securityId=#{securityid}
+    </update>
+    <delete id="deleteUserSecurity" parameterType="UserSecurity">
+        delete from user_security where userId = #{userid,jdbcType=INTEGER} and securityId=#{securityid,jdbcType=INTEGER}
+    </delete>
 </mapper>

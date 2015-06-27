@@ -100,4 +100,8 @@
     <update id="upDateRoleNameByRoleId" parameterType="model.UserRoleRole">
       UPDATE  user_role SET userRloe =#{role} WHERE roleId=#{roleId}
     </update>
+
+    <delete id="deleteUserRole" parameterType="model.User_Role">
+        delete from user_role where userId=#{userid,jdbcType=INTEGER} and roleId = #{roleid,jdbcType=INTEGER}
+    </delete>
 </mapper>

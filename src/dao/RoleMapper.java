@@ -24,4 +24,8 @@ public interface RoleMapper
     List<Role> getAllRoleList();
 
     List<String> getAllRoleNameList();
+
+    int getIdByRoleName(String role);
+
+    Role getRoleByName(String name);
 }

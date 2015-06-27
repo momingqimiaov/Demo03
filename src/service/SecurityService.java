@@ -39,4 +39,26 @@ public class SecurityService
         securityMapper.deleteByPrimaryKey(id);
     }
 
+    public void upDateSecurityById(Security security)
+    {
+        securityMapper.updateByPrimaryKey(security);
+    }
+
+    public int getIdBySecurityName(String security)
+    {
+        return securityMapper.getIdBySecurityName(security);
+    }
+
+    public boolean checkIsExistByName(String securityName)
+    {
+        Security security = securityMapper.getSecurityByName(securityName);
+        if (security == null)
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+
+    }
 }

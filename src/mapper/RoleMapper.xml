@@ -81,10 +81,9 @@
     <select id="getAllRoleNameList" resultType="String">
         select rolename from roles
     </select>
-    <select id="getIdByRoleName" resultType="Integer">
+    <select id="getIdByRoleName" parameterType="java.lang.String" resultType="java.lang.Integer">
         select id from roles where rolename=#{rolename}
     </select>
-
 
 
 </mapper>

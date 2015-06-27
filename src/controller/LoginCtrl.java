@@ -47,6 +47,8 @@ public class LoginCtrl
             case "userManager":
                 List<User> userList = userService.getAllUserList();
                 whichUrl.put("tag", "userManager");
+
+
                 listUsers.put("userList", userList);
                 break;
             case "roleManager":

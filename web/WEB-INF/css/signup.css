@@ -1,0 +1,54 @@
+body {
+	background-image: url("../img/bg2.jpg");
+	background-position: 50% 80%;
+}
+
+.container {
+	padding-top: 200px;
+}
+
+.img1 {
+	width: 31px;
+	height: 31px;
+	background-image: url("../img/u.png");
+}
+
+.img2 {
+	width: 31px;
+	height: 31px;
+	background-image: url("../img/p.png");
+}
+
+form div input {
+	text-align: center;
+	height: 22px;
+	border-radius: 15px;
+	border-style: none;
+	vertical-align: middle;
+	height: 22px;
+	background-color: #e9e9e9;
+}
+
+form div input:FOCUS {
+	background-color: orange;
+}
+
+.submit {
+	width: 100%;
+	height: 30px;
+	letter-spacing: 20px;
+	height: 30px;
+}
+
+.submit:HOVER {
+	background-color: maroon;
+	text-shadow: 5px 5px 5px #FF0000;
+}
+
+.submit:ACTIVE {
+	background-color: green;
+}
+
+span {
+	color: #84548d;
+}

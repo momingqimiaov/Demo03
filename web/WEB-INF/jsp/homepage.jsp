@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/modal.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/ajax.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/modal.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/homepage.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/modal.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/ajax.js"></script>
     <title>HomePage</title>
 </head>
 <body style="background-image: url('${pageContext.request.contextPath}/img/bg1.jpg');">

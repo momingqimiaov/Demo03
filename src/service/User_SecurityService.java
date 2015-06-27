@@ -1,6 +1,8 @@
 package service;
 
 import dao.User_SecurityMapper;
+import model.UserSecurity;
+import model.User_Security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +35,20 @@ public class User_SecurityService
     public void deleteUserBySecurityID(Integer id)
     {
         user_securityMapper.deletUserSecurityBySecurityID(id);
+    }
+
+    public void upDateSecurityNameBySecurityId(UserSecurity userSecurity)
+    {
+        user_securityMapper.upDateSecurityNameBySecurityId(userSecurity);
+    }
+
+    public void addUserSecurity(User_Security user_security)
+    {
+        user_securityMapper.insertSelective(user_security);
+    }
+
+    public void deleteUserSecurity(User_Security user_security)
+    {
+        user_securityMapper.deleteUserSecurity(user_security);
     }
 }

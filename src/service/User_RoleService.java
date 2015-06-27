@@ -2,6 +2,7 @@ package service;
 
 import dao.User_RoleMapper;
 import model.UserRoleRole;
+import model.User_Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,5 +41,16 @@ public class User_RoleService
     public void upDateRoleNameByRoleId(UserRoleRole userRoleRole)
     {
         user_roleMapper.upDateRoleNameByRoleId(userRoleRole);
+    }
+
+    public void addUserRole(User_Role user_role)
+    {
+        user_roleMapper.insertSelective(user_role);
+    }
+
+    public void deleteUserRole(User_Role user_role)
+    {
+        user_roleMapper.deleteUserRole(user_role);
+
     }
 }

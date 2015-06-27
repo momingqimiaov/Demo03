@@ -44,4 +44,17 @@ public class UserService
     {
         userMapper.updateByPrimaryKey(user);
     }
+
+
+    public boolean checkIsExistByName(String name)
+    {
+        User user = userMapper.getUserByName(name);
+        if (user == null)
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+    }
 }

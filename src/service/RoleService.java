@@ -42,4 +42,22 @@ public class RoleService
     {
         roleMapper.updateByPrimaryKeySelective(role);
     }
+
+    public int getIdByRoleName(String role)
+    {
+        return roleMapper.getIdByRoleName(role);
+    }
+
+    public boolean checkIsExistByName(String rolename)
+    {
+        Role role = roleMapper.getRoleByName(rolename);
+        if (role == null)
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+
+    }
 }

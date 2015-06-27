@@ -25,4 +25,7 @@ public interface SecurityMapper
 
     List<String> getAllSecurityNameList();
 
+    int getIdBySecurityName(String security);
+
+    Security getSecurityByName(String securityName);
 }

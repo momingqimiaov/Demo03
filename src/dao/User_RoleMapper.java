@@ -31,4 +31,6 @@ public interface User_RoleMapper
     void deleteUserByRoleName(String userRloe);
 
     void upDateRoleNameByRoleId(UserRoleRole userRoleRole);
+
+    void deleteUserRole(User_Role user_role);
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import service.*;
 
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
@@ -28,34 +29,33 @@ public class UserCtrl
     @Autowired
     User_SecurityService user_securityService;
 
-    //    @RequestMapping(value = {"/insert"})
-//    public ModelAndView insert()
-//    {
-//        return new ModelAndView("signup");
-//    }
-//
-//    @RequestMapping(value = {"/checkUserIsExist"}, method = {RequestMethod.POST})
-//    public void checkIsExist(String name, PrintWriter out)
-//    {
-//
-//        if (userService.checkIsExistByName(name))
-//        {
-//            out.write("Sorry,Already Exists");
-//        } else
-//        {
-//            out.write("(:");
-//        }
-//    }
-//
-//    @RequestMapping(value = {"/submit"}, method = {RequestMethod.POST})
-//    public ModelAndView submit(@RequestParam(value = "name") String name, @RequestParam(value = "password1") String password)
-//    {
-//        Date date = new Date();
-//        User user = new User(name, password, date);
-//        userService.addUser(user);
-//        return new ModelAndView("redirect:/index");
-//    }
-//
+    @RequestMapping(value = {"/insert"})
+    public ModelAndView insert()
+    {
+        return new ModelAndView("signup");
+    }
+
+    @RequestMapping(value = {"/checkUserIsExist"}, method = {RequestMethod.POST})
+    public void checkIsExist(String name, PrintWriter out)
+    {
+
+        if (userService.checkIsExistByName(name))
+        {
+            out.write("Sorry,Already Exists");
+        } else
+        {
+            out.write("(:");
+        }
+    }
+
+    @RequestMapping(value = {"/submit"}, method = {RequestMethod.POST})
+    public ModelAndView submit(@RequestParam(value = "name") String name, @RequestParam(value = "password1") String password)
+    {
+        User user = new User(name, password);
+        userService.addUser(user);
+        return new ModelAndView("redirect:/index");
+    }
+
     @RequestMapping(value = {"/addUser"}, method = {RequestMethod.POST})
     public ModelAndView addUser(@RequestParam(value = "name") String userName, @RequestParam(value = "password") String password)
     {
@@ -93,7 +93,8 @@ public class UserCtrl
         userService.upDateUserById(user);//更新用户
         return new ModelAndView("redirect:/homepage/userManager");
     }
-/*分配角色*/
+
+    /*分配角色*/
     @RequestMapping(value = {"/assignrole/{id}"})
     public ModelAndView assignrole(@PathVariable(value = "id") Integer id, Map<String, List<String>> assignedRoleListMap, Map<String, List<String>> tmpListMap, Map<String, Integer> idMap)
     {

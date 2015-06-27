@@ -1,6 +1,7 @@
 package dao;
 
 
+import model.UserSecurity;
 import model.User_Security;
 import org.springframework.stereotype.Component;
 
@@ -28,4 +29,8 @@ public interface User_SecurityMapper
     List<String> getUserSecurityBySecurityID(Integer securityId);
 
     void deletUserSecurityBySecurityID(Integer securityId);
+
+    void upDateSecurityNameBySecurityId(UserSecurity userSecurity);
+
+    void deleteUserSecurity(User_Security user_security);
 }

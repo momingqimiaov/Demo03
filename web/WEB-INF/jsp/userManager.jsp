@@ -46,7 +46,7 @@
                     <td>${user.id }</td>
                     <td>${user.username }</td>
                     <td>${user.password }</td>
-                    <td>${user.role }</td>
+                    <td>${user.role}</td>
                     <td>${user.security }</td>
                     <td>${user.aboutuser}</td>
                     <td style="width: 250px;"><a href="${pageContext.request.contextPath}/deleteuser/${user.id}">

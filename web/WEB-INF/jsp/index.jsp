@@ -7,8 +7,8 @@
     <title>Index</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.1.3.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/modal.js"/>
 
 </head>
 
@@ -32,7 +32,7 @@
     <br/>
 
     <div class="copy-rights col-sm-offset-2">
-        <a href="#">立即注册</a>| <a href="#">忘记密码？</a>| <a href="#">用户隐私</a>| <a href="#">用户协议</a>|
+        <a href="/insert">立即注册</a>| <a href="#">忘记密码？</a>| <a href="#">用户隐私</a>| <a href="#">用户协议</a>|
         <span style="color: #080808"><b>©2015 CHENSHANG . All rights reserved 京ICP备XXXXXX号 京公网安备1234567890</b></span>
     </div>
     <br/>

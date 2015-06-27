@@ -3,6 +3,7 @@ package controller;
 import model.Role;
 import model.User;
 import model.UserRoleRole;
+import model.User_Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import service.RoleService;
 import service.UserService;
 import service.User_RoleService;
 
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
@@ -28,17 +30,17 @@ public class RoleCtrl
     @Autowired
     UserService userService;
 
-//    @RequestMapping(value = {"/checkRoleIsExist"}, method = {RequestMethod.POST})
-//    public void checkIsExist(String role, PrintWriter out)
-//    {
-//        if (roleService.checkIsExistByName(role))
-//        {
-//            out.write("Sorry,Already Exists");
-//        } else
-//        {
-//            out.write("(:");
-//        }
-//    }
+    @RequestMapping(value = {"/checkRoleIsExist"}, method = {RequestMethod.POST})
+    public void checkIsExist(String role, PrintWriter out)
+    {
+        if (roleService.checkIsExistByName(role))
+        {
+            out.write("Sorry,Already Exists");
+        } else
+        {
+            out.write("(:");
+        }
+    }
 
     @RequestMapping(value = {"/addRole"}, method = {RequestMethod.POST})
     public ModelAndView addRloe(@RequestParam(value = "role") String role, @RequestParam(value = "roledescription") String roledescription)
@@ -107,50 +109,49 @@ public class RoleCtrl
 
         return new ModelAndView("redirect:/homepage/roleManager");
     }
-//
-//    @RequestMapping(value = {"/RoleAssigned/{id}"}, method = {RequestMethod.POST})
-//    public ModelAndView assigned(@PathVariable(value = "id") int id, @RequestParam(value = "checkbox", required = false, defaultValue = "") String roles)
-//    {
-//        User user = userService.getUserById(id);
-//
-//        if (!roles.equals(""))
-//        {
-//            user.setRole((user.getRole() + "," + roles).replace(",", " "));
-//            String[] tmp = roles.split(",");
-//            for (int i = 0; i < tmp.length; i++)
-//            {
-//                String role = tmp[i];
-//                int roleid = roleService.getIdByRoleName(role);
-//                User_Role user_Role = new User_Role(id, user.getName(), roleid, role);
-//                userRoleService.addUserRole(user_Role);
-//            }
-//        }
-//        userService.upDateUserById(user);
-//
-//        return new ModelAndView("redirect:/homepage/userManager");
-//    }
-//
-//    @RequestMapping(value = {"/removeRole/{id}"})
-//    public ModelAndView removeRole(@PathVariable(value = "id") Integer id, @RequestParam(value = "checkbox", required = false, defaultValue = "") String roles)
-//    {
-//
-//        User user = userService.getUserById(id);
-//        if (!roles.equals(""))
-//        {
-//            String[] tmp = roles.split(",");
-//            for (int i = 0; i < tmp.length; i++)
-//            {
-//                String role = tmp[i];
-//                int roleid = roleService.getIdByRoleName(role);
-//                User_Role user_Role = new User_Role(id, user.getName(), roleid, role);
-//                userRoleService.deleteUserRole(user_Role);
-//
-//                String newrole = user.getRole().replace(role, "");
-//                User user2 = new User(id, user.getName(), user.getPassword(), newrole, user.getSecurity(), user.getRegistrationtime());
-//                userService.upDateUserById(user2);
-//            }
-//        }
-//
-//        return new ModelAndView("redirect:/homepage/userManager");
-//    }
+
+    @RequestMapping(value = {"/RoleAssigned/{id}"}, method = {RequestMethod.POST})
+    public ModelAndView assigned(@PathVariable(value = "id") int id, @RequestParam(value = "checkbox", required = false, defaultValue = "") String roles)
+    {
+        User user = userService.getUserById(id);
+
+        if (!roles.equals(""))
+        {
+            user.setRole((user.getRole() + "," + roles).replace(",", " "));
+            String[] tmp = roles.split(",");
+            for (int i = 0; i < tmp.length; i++)
+            {
+                String role = tmp[i];
+                int roleid = roleService.getIdByRoleName(role);
+                User_Role user_Role = new User_Role(id, role, roleid);
+                user_roleService.addUserRole(user_Role);
+            }
+        }
+        userService.upDateUserById(user);
+
+        return new ModelAndView("redirect:/homepage/userManager");
+    }
+
+    @RequestMapping(value = {"/removeRole/{id}"})
+    public ModelAndView removeRole(@PathVariable(value = "id") Integer id, @RequestParam(value = "checkbox", required = false, defaultValue = "") String roles)
+    {
+
+        User user = userService.getUserById(id);
+        if (!roles.equals(""))
+        {
+            String[] tmp = roles.split(",");
+            for (int i = 0; i < tmp.length; i++)
+            {
+                String role = tmp[i];
+                int roleid = roleService.getIdByRoleName(role);
+                User_Role user_Role = new User_Role(id, role, roleid);
+                user_roleService.deleteUserRole(user_Role);
+                String newrole = user.getRole().replace(role, "");
+                User user2 = new User(id, user.getUsername(), user.getPassword(), newrole, user.getSecurity(), user.getAboutuser());
+                userService.upDateUserById(user2);
+            }
+        }
+
+        return new ModelAndView("redirect:/homepage/userManager");
+    }
 }

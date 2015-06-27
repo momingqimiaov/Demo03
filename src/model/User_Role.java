@@ -77,4 +77,11 @@ public class User_Role
         this.userid = userid;
         this.userrloe = userrloe;
     }
+
+    public User_Role(Integer userid, String userrloe, Integer roleid)
+    {
+        this.userid = userid;
+        this.userrloe = userrloe;
+        this.roleid = roleid;
+    }
 }

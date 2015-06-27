@@ -1,6 +1,7 @@
 package model;
 
-public class User_Security {
+public class User_Security
+{
     private Integer id;
 
     private Integer userid;
@@ -9,35 +10,50 @@ public class User_Security {
 
     private Integer securityid;
 
-    public Integer getId() {
+    public Integer getId()
+    {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Integer id)
+    {
         this.id = id;
     }
 
-    public Integer getUserid() {
+    public Integer getUserid()
+    {
         return userid;
     }
 
-    public void setUserid(Integer userid) {
+    public void setUserid(Integer userid)
+    {
         this.userid = userid;
     }
 
-    public String getUsersecurity() {
+    public String getUsersecurity()
+    {
         return usersecurity;
     }
 
-    public void setUsersecurity(String usersecurity) {
+    public void setUsersecurity(String usersecurity)
+    {
         this.usersecurity = usersecurity == null ? null : usersecurity.trim();
     }
 
-    public Integer getSecurityid() {
+    public Integer getSecurityid()
+    {
         return securityid;
     }
 
-    public void setSecurityid(Integer securityid) {
+    public void setSecurityid(Integer securityid)
+    {
+        this.securityid = securityid;
+    }
+
+    public User_Security(Integer userid, String usersecurity, Integer securityid)
+    {
+        this.userid = userid;
+        this.usersecurity = usersecurity;
         this.securityid = securityid;
     }
 }
